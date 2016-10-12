@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>All Books</title>
+</h:head>
+<h:body>
+	<f:view>
+		<h:form>
+			<h1>
+				<h:outputText value="List" />
+			</h1>
+			<p:dataTable value="#{bookController.bookList}" var="item">
+				<p:column headerText="Id">
+					<h:outputText value="#{item.id}" />
+				</p:column>
+
+				<p:column headerText="Title">
+					<h:outputText value="#{item.title}" />
+				</p:column>
+
+				<p:column headerText="Price">
+					<h:outputText value="#{item.price}" />
+				</p:column>
+				
+				<p:column headerText="Description">
+					<h:outputText value="#{item.description}" />
+				</p:column>
+				
+				<p:column headerText="Isbn">
+					<h:outputText value="#{item.isbn}" />
+				</p:column>
+				
+				<p:column headerText="NbOfPage">
+					<h:outputText value="#{item.nbOfPage}" />
+				</p:column>
+				
+				<p:column headerText="Illustrations">
+					<h:outputText value="#{item.illustrations}" />
+				</p:column>
+			</p:dataTable>
+			<p:commandButton value="Create a book"
+				action="#{bookController.shouldCreateBook()}" />
+		</h:form>
+	</f:view>
+
+</h:body>
+</html>
+

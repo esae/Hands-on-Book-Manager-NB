@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Id:" for="id" />
+                    <p:inputText id="id" value="#{bookController.book.id}" title="Id" disabled="true" />
+                    <p:outputLabel value="Title:" for="title" />
+                    <p:inputText id="title" value="#{bookController.book.title}" title="Title" required="true" requiredMessage="The Title field is required."/>
+                    <p:outputLabel value="Price:" for="price" />
+                    <p:inputText id="price" value="#{bookController.book.price}" title="Price" />
+                    <p:outputLabel value="Description:" for="description" />
+                    <p:inputText id="description" value="#{bookController.book.description}" title="Description" />
+                    <p:outputLabel value="Isbn:" for="isbn" />
+                    <p:inputText id="isbn" value="#{bookController.book.isbn}" title="Isbn" />
+                    <p:outputLabel value="NbOfPage:" for="nbOfPage" />
+                    <p:inputText id="nbOfPage" value="#{bookController.book.nbOfPage}" title="NbOfPage" />
+                    <p:outputLabel value="Illustrations:" for="illustrations" />
+                    <p:inputText id="illustrations" value="#{bookController.book.illustrations}" title="Illustrations" />
+                </p:panelGrid>
+                <p:commandButton value="Create a book" action="#{bookController.doCreateBook}"/>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
